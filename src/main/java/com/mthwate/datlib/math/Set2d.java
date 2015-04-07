@@ -153,36 +153,84 @@ public class Set2d implements Serializable {
 		return "(" + _x + ", " + _y + ")";
 	}
 
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to add to the current set
+	 * @return the new set
+	 */
 	private Set2d plus(Set2d set) {
 		return addNew(set);
 	}
 
-	private Set2d plus(double i) {
-		return addNew(i);
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by a number.
+	 *
+	 * @param d the number to add to the set
+	 * @return the new set
+	 */
+	private Set2d plus(double d) {
+		return addNew(d);
 	}
 
+	/**
+	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
+	 *
+	 * @param set the set to subtract from to the current set
+	 * @return the new set
+	 */
 	private Set2d minus(Set2d set) {
 		return subtractNew(set);
 	}
 
-	private Set2d minus(double i) {
-		return subtractNew(i);
+	/**
+	 * A groovy operator overloading method to subtract all numbers in the set by a number.
+	 *
+	 * @param d the number to subtract from the set
+	 * @return the new set
+	 */
+	private Set2d minus(double d) {
+		return subtractNew(d);
 	}
 
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to multiply the current set by
+	 * @return the new set
+	 */
 	private Set2d multiply(Set2d set) {
 		return multNew(set);
 	}
 
-	private Set2d multiply(double i) {
-		return multNew(i);
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by a number.
+	 *
+	 * @param d the number to multiply the set by
+	 * @return the new set
+	 */
+	private Set2d multiply(double d) {
+		return multNew(d);
 	}
 
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to divide from the current set
+	 * @return the new set
+	 */
 	private Set2d div(Set2d set) {
 		return divNew(set);
 	}
 
-	private Set2d div(double i) {
-		return divNew(i);
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by a number.
+	 *
+	 * @param d the number to divide the set by
+	 * @return the new set
+	 */
+	private Set2d div(double d) {
+		return divNew(d);
 	}
 	
 }

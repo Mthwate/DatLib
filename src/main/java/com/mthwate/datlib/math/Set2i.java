@@ -153,34 +153,82 @@ public class Set2i implements Serializable {
 		return "(" + _x + ", " + _y + ")";
 	}
 
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to add to the current set
+	 * @return the new set
+	 */
 	private Set2i plus(Set2i set) {
 		return addNew(set);
 	}
 
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by a number.
+	 *
+	 * @param i the number to add to the set
+	 * @return the new set
+	 */
 	private Set2i plus(int i) {
 		return addNew(i);
 	}
 
+	/**
+	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
+	 *
+	 * @param set the set to subtract from to the current set
+	 * @return the new set
+	 */
 	private Set2i minus(Set2i set) {
 		return subtractNew(set);
 	}
 
+	/**
+	 * A groovy operator overloading method to subtract all numbers in the set by a number.
+	 *
+	 * @param i the number to subtract from the set
+	 * @return the new set
+	 */
 	private Set2i minus(int i) {
 		return subtractNew(i);
 	}
 
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to multiply the current set by
+	 * @return the new set
+	 */
 	private Set2i multiply(Set2i set) {
 		return multNew(set);
 	}
 
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by a number.
+	 *
+	 * @param i the number to multiply the set by
+	 * @return the new set
+	 */
 	private Set2i multiply(int i) {
 		return multNew(i);
 	}
 
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to divide from the current set
+	 * @return the new set
+	 */
 	private Set2i div(Set2i set) {
 		return divNew(set);
 	}
 
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by a number.
+	 *
+	 * @param i the number to divide the set by
+	 * @return the new set
+	 */
 	private Set2i div(int i) {
 		return divNew(i);
 	}

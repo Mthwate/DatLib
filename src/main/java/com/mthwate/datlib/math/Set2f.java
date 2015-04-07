@@ -153,36 +153,84 @@ public class Set2f implements Serializable {
 		return "(" + _x + ", " + _y + ")";
 	}
 
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to add to the current set
+	 * @return the new set
+	 */
 	private Set2f plus(Set2f set) {
 		return addNew(set);
 	}
 
-	private Set2f plus(float i) {
-		return addNew(i);
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by a number.
+	 *
+	 * @param f the number to add to the set
+	 * @return the new set
+	 */
+	private Set2f plus(float f) {
+		return addNew(f);
 	}
 
+	/**
+	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
+	 *
+	 * @param set the set to subtract from to the current set
+	 * @return the new set
+	 */
 	private Set2f minus(Set2f set) {
 		return subtractNew(set);
 	}
 
-	private Set2f minus(float i) {
-		return subtractNew(i);
+	/**
+	 * A groovy operator overloading method to subtract all numbers in the set by a number.
+	 *
+	 * @param f the number to subtract from the set
+	 * @return the new set
+	 */
+	private Set2f minus(float f) {
+		return subtractNew(f);
 	}
 
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to multiply the current set by
+	 * @return the new set
+	 */
 	private Set2f multiply(Set2f set) {
 		return multNew(set);
 	}
 
-	private Set2f multiply(float i) {
-		return multNew(i);
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by a number.
+	 *
+	 * @param f the number to multiply the set by
+	 * @return the new set
+	 */
+	private Set2f multiply(float f) {
+		return multNew(f);
 	}
 
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to divide from the current set
+	 * @return the new set
+	 */
 	private Set2f div(Set2f set) {
 		return divNew(set);
 	}
 
-	private Set2f div(float i) {
-		return divNew(i);
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by a number.
+	 *
+	 * @param f the number to divide the set by
+	 * @return the new set
+	 */
+	private Set2f div(float f) {
+		return divNew(f);
 	}
 	
 }

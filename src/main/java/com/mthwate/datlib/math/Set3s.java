@@ -165,36 +165,84 @@ public class Set3s implements Serializable {
 		return "(" + _x + ", " + _y + ", " + _z + ")";
 	}
 
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to add to the current set
+	 * @return the new set
+	 */
 	private Set3s plus(Set3s set) {
 		return addNew(set);
 	}
 
-	private Set3s plus(short i) {
-		return addNew(i);
+	/**
+	 * A groovy operator overloading method to add all numbers in the set by a number.
+	 *
+	 * @param s the number to add to the set
+	 * @return the new set
+	 */
+	private Set3s plus(short s) {
+		return addNew(s);
 	}
 
+	/**
+	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
+	 *
+	 * @param set the set to subtract from to the current set
+	 * @return the new set
+	 */
 	private Set3s minus(Set3s set) {
 		return subtractNew(set);
 	}
 
-	private Set3s minus(short i) {
-		return subtractNew(i);
+	/**
+	 * A groovy operator overloading method to subtract all numbers in the set by a number.
+	 *
+	 * @param s the number to subtract from the set
+	 * @return the new set
+	 */
+	private Set3s minus(short s) {
+		return subtractNew(s);
 	}
 
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to multiply the current set by
+	 * @return the new set
+	 */
 	private Set3s multiply(Set3s set) {
 		return multNew(set);
 	}
 
-	private Set3s multiply(short i) {
-		return multNew(i);
+	/**
+	 * A groovy operator overloading method to multiply all numbers in the set by a number.
+	 *
+	 * @param s the number to multiply the set by
+	 * @return the new set
+	 */
+	private Set3s multiply(short s) {
+		return multNew(s);
 	}
 
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
+	 *
+	 * @param set the set to divide from the current set
+	 * @return the new set
+	 */
 	private Set3s div(Set3s set) {
 		return divNew(set);
 	}
 
-	private Set3s div(short i) {
-		return divNew(i);
+	/**
+	 * A groovy operator overloading method to divide all numbers in the set by a number.
+	 *
+	 * @param s the number to divide the set by
+	 * @return the new set
+	 */
+	private Set3s div(short s) {
+		return divNew(s);
 	}
 
 }
