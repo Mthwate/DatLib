@@ -1,0 +1,82 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = 'com.mthwate.datlib'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "org.codehaus.groovy:groovy-test:2.4.0"
+}
+
+task javadocJar (type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from javadoc.destinationDir
+}
+
+task sourceJar (type : Jar) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+artifacts {
+	archives jar
+	archives javadocJar
+	archives sourceJar
+}
+
+signing {
+	sign configurations.archives
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+			snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+				authentication(userName: ossrhUsername, password: ossrhPassword)
+			}
+
+
+			pom.project {
+				name 'DatLib'
+				description 'The useless library of everything.'
+				url 'https://github.com/Mthwate/DatLib'
+
+				scm {
+					connection 'scm:git:git@github.com:Mthwate/DatLib.git'
+					developerConnection 'scm:git:git@github.com:Mthwate/DatLib.git'
+					url 'https://github.com/Mthwate/DatLib'
+				}
+
+				licenses {
+					license {
+						name 'MIT License'
+						url 'http://www.opensource.org/licenses/mit-license.php'
+					}
+				}
+
+				developers {
+					developer {
+						id 'mthwate'
+						name 'Matthew Benkart'
+						email 'mthwate@mthwate.com'
+					}
+				}
+			}
+
+		}
+	}
+}
