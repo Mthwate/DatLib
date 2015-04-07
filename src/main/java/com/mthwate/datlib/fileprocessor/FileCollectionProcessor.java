@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A {@link FileProcessor} which collects all {@link File} objects it finds.
+ * A {@link FileProcessor} which collects a list of all files it finds.
  *
  * @author mthwate
  * @since 1.0
