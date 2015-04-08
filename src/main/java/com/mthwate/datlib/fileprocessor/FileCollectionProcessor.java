@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class FileCollectionProcessor implements FileProcessor {
 
-	private List<File> files = new ArrayList();
+	private List<File> files = new ArrayList<>();
 
 	public List<File> getFiles() {
 		return files;

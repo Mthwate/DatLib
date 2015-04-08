@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class DirectoryCollectionProcessor implements FileProcessor {
 
-	private List<File> directories = new ArrayList();
+	private List<File> directories = new ArrayList<>();
 
 	public List<File> getDirectories() {
 		return directories;
