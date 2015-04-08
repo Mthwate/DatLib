@@ -44,7 +44,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param set the set to add to the current set
 	 * @return the new set
 	 */
-	private S plus(S set) {
+	public S plus(S set) {
 		return addNew(set);
 	}
 
@@ -54,7 +54,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param n the number to add to the set
 	 * @return the new set
 	 */
-	private S plus(T n) {
+	public S plus(T n) {
 		return addNew(n);
 	}
 
@@ -64,7 +64,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param set the set to subtract from to the current set
 	 * @return the new set
 	 */
-	private S minus(S set) {
+	public S minus(S set) {
 		return subtractNew(set);
 	}
 
@@ -74,7 +74,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param n the number to subtract from the set
 	 * @return the new set
 	 */
-	private S minus(T n) {
+	public S minus(T n) {
 		return subtractNew(n);
 	}
 
@@ -84,7 +84,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param set the set to multiply the current set by
 	 * @return the new set
 	 */
-	private S multiply(S set) {
+	public S multiply(S set) {
 		return multNew(set);
 	}
 
@@ -94,7 +94,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param n the number to multiply the set by
 	 * @return the new set
 	 */
-	private S multiply(T n) {
+	public S multiply(T n) {
 		return multNew(n);
 	}
 
@@ -104,7 +104,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param set the set to divide from the current set
 	 * @return the new set
 	 */
-	private S div(S set) {
+	public S div(S set) {
 		return divNew(set);
 	}
 
@@ -114,7 +114,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	 * @param n the number to divide the set by
 	 * @return the new set
 	 */
-	private S div(T n) {
+	public S div(T n) {
 		return divNew(n);
 	}
 
