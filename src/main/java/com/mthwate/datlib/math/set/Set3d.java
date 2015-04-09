@@ -1,4 +1,4 @@
-package com.mthwate.datlib.math;
+package com.mthwate.datlib.math.set;
 
 import java.io.Serializable;
 

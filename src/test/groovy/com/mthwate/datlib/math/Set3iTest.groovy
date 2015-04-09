@@ -1,5 +1,6 @@
 package com.mthwate.datlib.math
 
+import com.mthwate.datlib.math.set.Set3i
 import org.junit.Assert
 
 /**

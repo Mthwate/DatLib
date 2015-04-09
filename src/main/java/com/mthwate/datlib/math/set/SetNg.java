@@ -1,4 +1,4 @@
-package com.mthwate.datlib.math;
+package com.mthwate.datlib.math.set;
 
 /**
  * @author mthwate
