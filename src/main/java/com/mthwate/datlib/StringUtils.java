@@ -6,19 +6,27 @@ package com.mthwate.datlib;
  */
 public class StringUtils {
 
-	public static String join(String[] elements, String joiner) {
-		return join(elements, 0, joiner);
+	public static String join(String[] elements) {
+		return join(elements, "");
 	}
 
-	public static String join(String[] elements, int startIndex, String joiner) {
-		String out = "";
-		for (int i = startIndex; i < elements.length; i++) {
-			out += elements[i];
-			if (i != elements.length - 1) {
-				out += joiner;
+	public static String join(String[] elements, String joiner) {
+		return join(elements, joiner, 0);
+	}
+
+	public static String join(String[] elements, String joiner, int startIndex) {
+		return join(elements, joiner, startIndex, elements.length);
+	}
+
+	public static String join(String[] elements, String joiner, int startIndex, int endIndex) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = startIndex; i < endIndex; i++) {
+			sb.append(elements[i]);
+			if (i != endIndex - 1) {
+				sb.append(joiner);
 			}
 		}
-		return out;
+		return sb.toString();
 	}
 	
 }
