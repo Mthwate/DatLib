@@ -20,6 +20,7 @@ public class IOUtils {
 	 * Silently closes any object implementing closeable.
 	 * Can safely accept null objects.
 	 *
+	 * @since 1.0
 	 * @param c the object to close
 	 */
 	public static void close(Closeable c) {
@@ -33,6 +34,7 @@ public class IOUtils {
 	/**
 	 * Gets the jar file a class is contained in.
 	 *
+	 * @since 1.0
 	 * @param clazz the class to get the container of
 	 * @return the jar file the class is contained in
 	 */
@@ -49,6 +51,7 @@ public class IOUtils {
 	/**
 	 * Lists the contents of a zip file.
 	 *
+	 * @since 1.0
 	 * @param zipFile the zip file to use
 	 * @return the contents of the zip file
 	 * @throws IOException if an I/O error has occurred
@@ -61,6 +64,7 @@ public class IOUtils {
 	 * Lists the contents of a zip file.
 	 * Only looks in the supplied path within the zip file.
 	 *
+	 * @since 1.0
 	 * @param zipFile the zip file to use
 	 * @param path the path inside the jar file
 	 * @return the contents of the zip file

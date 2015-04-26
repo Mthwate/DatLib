@@ -15,6 +15,7 @@ public class PropUtils {
 	/**
 	 * Loads properties from a file in the classpath.
 	 *
+	 * @since 1.0
 	 * @param path the path of the properties file
 	 * @return the properties
 	 * @throws IOException an error occurred while reading the file
@@ -33,6 +34,7 @@ public class PropUtils {
 	/**
 	 * Loads properties from a file.
 	 *
+	 * @since 1.0
 	 * @param file the file to read properties from
 	 * @return the properties
 	 * @throws IOException an error occurred while reading the file
@@ -50,6 +52,7 @@ public class PropUtils {
 	/**
 	 * Loads properties from an input stream.
 	 *
+	 * @since 1.0
 	 * @param input the input stream to read properties from
 	 * @return the properties
 	 * @throws IOException an error occurred while reading the properties

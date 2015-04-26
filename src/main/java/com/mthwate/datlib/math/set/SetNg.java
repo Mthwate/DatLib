@@ -9,6 +9,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Adds to this set.
 	 *
+	 * @since 1.0
 	 * @param set the set to be added
 	 */
 	public abstract void addLocal(S set);
@@ -16,6 +17,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Adds a number to all items in this set.
 	 *
+	 * @since 1.0
 	 * @param n the number to add
 	 */
 	public abstract void addLocal(T n);
@@ -23,6 +25,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Adds 2 sets together resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param set the 2nd set to use
 	 * @return the resulting set
 	 */
@@ -31,6 +34,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Adds a number to all items in this set resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param n the number to add
 	 * @return the resulting set
 	 */
@@ -39,6 +43,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Subtracts from this set.
 	 *
+	 * @since 1.0
 	 * @param set the set to be subtracted
 	 */
 	public abstract void subtractLocal(S set);
@@ -46,6 +51,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Subtracts a number from all items in this set.
 	 *
+	 * @since 1.0
 	 * @param n the number to be subtracted
 	 */
 	public abstract void subtractLocal(T n);
@@ -53,6 +59,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Subtracts from this set resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param set the set to subtract
 	 * @return the resulting set
 	 */
@@ -61,6 +68,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Subtracts a number from all items in this set resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param n the number to subtract
 	 * @return the resulting set
 	 */
@@ -69,6 +77,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Multiplies this set by another set.
 	 *
+	 * @since 1.0
 	 * @param set the set to multiply this set by
 	 */
 	public abstract void multLocal(S set);
@@ -76,6 +85,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Multiplies all items in this set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number to multiply the set by
 	 */
 	public abstract void multLocal(T n);
@@ -83,6 +93,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Multiplies this set resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param set the set to multiply by
 	 * @return the resulting set
 	 */
@@ -91,6 +102,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Multiplies all items in this set by a number resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param n the number to multiply by
 	 * @return the resulting set
 	 */
@@ -99,6 +111,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Divides this set by another set.
 	 *
+	 * @since 1.0
 	 * @param set the set to divide by
 	 */
 	public abstract void divLocal(S set);
@@ -106,6 +119,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Divides all items in this set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number divide the set by
 	 */
 	public abstract void divLocal(T n);
@@ -113,6 +127,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Divides this set resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param set the set to divide by
 	 * @return the resulting set
 	 */
@@ -121,6 +136,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * Divides all items in this set by a number resulting in a new set.
 	 *
+	 * @since 1.0
 	 * @param n the number to divide by
 	 * @return the resulting set
 	 */
@@ -129,6 +145,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
 	 *
+	 * @since 1.0
 	 * @param set the set to add to the current set
 	 * @return the resulting set
 	 */
@@ -139,6 +156,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to add all numbers in the set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number to add to the set
 	 * @return the resulting set
 	 */
@@ -149,6 +167,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
 	 *
+	 * @since 1.0
 	 * @param set the set to subtract from to the current set
 	 * @return the resulting set
 	 */
@@ -159,6 +178,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to subtract all numbers in the set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number to subtract from the set
 	 * @return the resulting set
 	 */
@@ -169,6 +189,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
 	 *
+	 * @since 1.0
 	 * @param set the set to multiply the current set by
 	 * @return the resulting set
 	 */
@@ -179,6 +200,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to multiply all numbers in the set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number to multiply the set by
 	 * @return the resulting set
 	 */
@@ -189,6 +211,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
 	 *
+	 * @since 1.0
 	 * @param set the set to divide from the current set
 	 * @return the resulting set
 	 */
@@ -199,6 +222,7 @@ public abstract class SetNg<S extends SetNg, T> {
 	/**
 	 * A groovy operator overloading method to divide all numbers in the set by a number.
 	 *
+	 * @since 1.0
 	 * @param n the number to divide the set by
 	 * @return the resulting set
 	 */

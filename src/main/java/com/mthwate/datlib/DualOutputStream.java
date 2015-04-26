@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
+ * An output stream that writes to 2 other output streams at once.
+ *
  * @author mthwate
  * @since 1.0
  */
