@@ -48,8 +48,7 @@ public class MathUtils {
 		}
 
 		BigDecimal bd = new BigDecimal(value);
-		bd = bd.setScale(decimals, roundingMode);
-		return bd.doubleValue();
+		return bd.setScale(decimals, roundingMode).doubleValue();
 	}
 
 }
