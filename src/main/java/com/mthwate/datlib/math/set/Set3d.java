@@ -14,6 +14,10 @@ public class Set3d extends Set3g<Set3d, Double> implements Serializable {
 		super(x, y, z);
 	}
 
+	public Set3d(Set3d set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Double x, Double y, Double z) {
 		_x += x;
@@ -60,6 +64,11 @@ public class Set3d extends Set3g<Set3d, Double> implements Serializable {
 	@Override
 	public Set3d divNew(Double x, Double y, Double z) {
 		return new Set3d(_x * x, _y * y, _z * z);
+	}
+
+	@Override
+	public Set3d clone() {
+		return new Set3d(this);
 	}
 	
 }

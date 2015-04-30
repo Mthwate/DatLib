@@ -14,6 +14,10 @@ public class Set2f extends Set2g<Set2f, Float> implements Serializable {
 		super(x, y);
 	}
 
+	public Set2f(Set2f set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Float x, Float y) {
 		_x += x;
@@ -56,6 +60,11 @@ public class Set2f extends Set2g<Set2f, Float> implements Serializable {
 	@Override
 	public Set2f divNew(Float x, Float y) {
 		return new Set2f(_x * x, _y * y);
+	}
+
+	@Override
+	public Set2f clone() {
+		return new Set2f(this);
 	}
 	
 }

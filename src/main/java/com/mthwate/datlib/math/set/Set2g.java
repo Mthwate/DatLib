@@ -15,6 +15,10 @@ public abstract class Set2g<S extends Set2g<?, T>, T extends Number> extends Set
 		_y = y;
 	}
 
+	public Set2g(Set2g<S, T> set) {
+		this(set.getX(), set.getY());
+	}
+
 	public abstract void addLocal(T x, T y);
 	
 	@Override

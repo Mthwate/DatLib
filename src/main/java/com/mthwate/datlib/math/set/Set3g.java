@@ -18,6 +18,10 @@ public abstract class Set3g<S extends Set3g<?, T>, T extends Number> extends Set
 		_z = z;
 	}
 
+	public Set3g(Set3g<S, T> set) {
+		this(set.getX(), set.getY(), set.getZ());
+	}
+
 	public abstract void addLocal(T x, T y, T z);
 
 	@Override

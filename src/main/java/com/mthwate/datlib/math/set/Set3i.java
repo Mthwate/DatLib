@@ -14,6 +14,10 @@ public class Set3i extends Set3g<Set3i, Integer> implements Serializable {
 		super(x, y, z);
 	}
 
+	public Set3i(Set3i set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Integer x, Integer y, Integer z) {
 		_x += x;
@@ -62,4 +66,8 @@ public class Set3i extends Set3g<Set3i, Integer> implements Serializable {
 		return new Set3i(_x * x, _y * y, _z * z);
 	}
 
+	@Override
+	public Set3i clone() {
+		return new Set3i(this);
+	}
 }

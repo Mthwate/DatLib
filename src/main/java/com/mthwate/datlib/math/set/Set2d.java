@@ -14,6 +14,10 @@ public class Set2d extends Set2g<Set2d, Double> implements Serializable {
 		super(x, y);
 	}
 
+	public Set2d(Set2d set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Double x, Double y) {
 		_x += x;
@@ -56,6 +60,11 @@ public class Set2d extends Set2g<Set2d, Double> implements Serializable {
 	@Override
 	public Set2d divNew(Double x, Double y) {
 		return new Set2d(_x * x, _y * y);
+	}
+
+	@Override
+	public Set2d clone() {
+		return new Set2d(this);
 	}
 	
 }

@@ -14,6 +14,10 @@ public class Set3f extends Set3g<Set3f, Float> implements Serializable {
 		super(x, y, z);
 	}
 
+	public Set3f(Set3f set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Float x, Float y, Float z) {
 		_x += x;
@@ -60,6 +64,11 @@ public class Set3f extends Set3g<Set3f, Float> implements Serializable {
 	@Override
 	public Set3f divNew(Float x, Float y, Float z) {
 		return new Set3f(_x * x, _y * y, _z * z);
+	}
+
+	@Override
+	public Set3f clone() {
+		return new Set3f(this);
 	}
 	
 }

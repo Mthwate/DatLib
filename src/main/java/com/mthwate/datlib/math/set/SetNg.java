@@ -4,7 +4,7 @@ package com.mthwate.datlib.math.set;
  * @author mthwate
  * @since 1.0
  */
-public abstract class SetNg<S extends SetNg, T> {
+public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 
 	/**
 	 * Adds to this set.
@@ -229,5 +229,8 @@ public abstract class SetNg<S extends SetNg, T> {
 	public S div(T n) {
 		return divNew(n);
 	}
+
+	@Override
+	public abstract SetNg<S, T> clone();
 
 }

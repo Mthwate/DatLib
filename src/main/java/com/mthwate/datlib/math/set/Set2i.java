@@ -14,6 +14,10 @@ public class Set2i extends Set2g<Set2i, Integer> implements Serializable {
 		super(x, y);
 	}
 
+	public Set2i(Set2i set) {
+		super(set);
+	}
+
 	@Override
 	public void addLocal(Integer x, Integer y) {
 		_x += x;
@@ -56,6 +60,11 @@ public class Set2i extends Set2g<Set2i, Integer> implements Serializable {
 	@Override
 	public Set2i divNew(Integer x, Integer y) {
 		return new Set2i(_x * x, _y * y);
+	}
+
+	@Override
+	public Set2i clone() {
+		return new Set2i(this);
 	}
 	
 }
