@@ -1,7 +1,5 @@
 package com.mthwate.datlib;
 
-import java.security.MessageDigest;
-
 /**
  * @author mthwate
  * @since 1.1

@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.nio.charset.Charset;
 
-import static org.junit.Assert.*;
-
 /**
  * @author mthwate
  */
