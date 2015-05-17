@@ -12,7 +12,7 @@ public class HashUtilsTest {
 
 	private final Charset UTF8 = Charset.forName("UTF-8");
 
-	private final byte[][] data = {"Testing".getBytes(UTF8), "Abc123".getBytes(UTF8), "DatLib".getBytes(UTF8)};
+	private final String[] data = {"Testing", "Abc123", "DatLib"};
 
 	private final String[] md2 = {"a3e2c444defc08fd988386f90255c622", "3d5ddd728c73b2096f79d320099c1bd4", "fb62e8009ae4c2a6f39252b5a9552875"};
 
@@ -32,6 +32,7 @@ public class HashUtilsTest {
 	public void testMd2Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(md2[i], HashUtils.md2Hex(data[i]));
+			Assert.assertEquals(md2[i], HashUtils.md2Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -39,6 +40,7 @@ public class HashUtilsTest {
 	public void testMd5Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(md5[i], HashUtils.md5Hex(data[i]));
+			Assert.assertEquals(md5[i], HashUtils.md5Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -46,6 +48,7 @@ public class HashUtilsTest {
 	public void testSha1Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(sha1[i], HashUtils.sha1Hex(data[i]));
+			Assert.assertEquals(sha1[i], HashUtils.sha1Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -53,6 +56,7 @@ public class HashUtilsTest {
 	public void testSha224Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(sha224[i], HashUtils.sha224Hex(data[i]));
+			Assert.assertEquals(sha224[i], HashUtils.sha224Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -60,6 +64,7 @@ public class HashUtilsTest {
 	public void testSha256Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(sha256[i], HashUtils.sha256Hex(data[i]));
+			Assert.assertEquals(sha256[i], HashUtils.sha256Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -67,6 +72,7 @@ public class HashUtilsTest {
 	public void testSha384Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(sha384[i], HashUtils.sha384Hex(data[i]));
+			Assert.assertEquals(sha384[i], HashUtils.sha384Hex(data[i].getBytes(UTF8)));
 		}
 	}
 
@@ -74,6 +80,7 @@ public class HashUtilsTest {
 	public void testSha512Hex() throws Exception {
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals(sha512[i], HashUtils.sha512Hex(data[i]));
+			Assert.assertEquals(sha512[i], HashUtils.sha512Hex(data[i].getBytes(UTF8)));
 		}
 	}
 }

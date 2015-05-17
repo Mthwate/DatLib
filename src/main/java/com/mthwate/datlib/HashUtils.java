@@ -1,5 +1,6 @@
 package com.mthwate.datlib;
 
+import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -8,6 +9,8 @@ import java.security.NoSuchAlgorithmException;
  * @since 1.1
  */
 public class HashUtils {
+
+	private static final Charset UTF8 = Charset.forName("UTF-8");
 
 	private static String toHex(byte[] data) {
 		StringBuilder sb = new StringBuilder();
@@ -83,6 +86,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the MD2 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the MD2 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] md2Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return md2Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the MD2 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the MD2 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] md2Hash(String data) throws NoSuchAlgorithmException {
+		return md2Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the MD2 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -92,6 +120,31 @@ public class HashUtils {
 	 */
 	public static String md2Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.MD2);
+	}
+
+	/**
+	 * Hashes a string using the MD2 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal MD2 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String md2Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return md2Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the MD2 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal MD2 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String md2Hex(String data) throws NoSuchAlgorithmException {
+		return md2Hex(data, UTF8);
 	}
 
 	/**
@@ -107,6 +160,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the MD5 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the MD5 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] md5Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return md5Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the MD5 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the MD5 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] md5Hash(String data) throws NoSuchAlgorithmException {
+		return md5Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the MD5 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -116,6 +194,31 @@ public class HashUtils {
 	 */
 	public static String md5Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.MD5);
+	}
+
+	/**
+	 * Hashes a string using the MD5 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal MD5 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String md5Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return md5Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the MD5 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal MD5 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String md5Hex(String data) throws NoSuchAlgorithmException {
+		return md5Hex(data, UTF8);
 	}
 
 	/**
@@ -131,6 +234,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the SHA-1 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the SHA-1 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha1Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha1Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-1 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the SHA-1 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha1Hash(String data) throws NoSuchAlgorithmException {
+		return sha1Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the SHA-1 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -140,6 +268,31 @@ public class HashUtils {
 	 */
 	public static String sha1Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.SHA1);
+	}
+
+	/**
+	 * Hashes a string using the SHA-1 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal SHA-1 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha1Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha1Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-1 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal SHA-1 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha1Hex(String data) throws NoSuchAlgorithmException {
+		return sha1Hex(data, UTF8);
 	}
 
 	/**
@@ -155,6 +308,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the SHA-224 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the SHA-224 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha224Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha224Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-224 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the SHA-224 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha224Hash(String data) throws NoSuchAlgorithmException {
+		return sha224Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the SHA-224 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -164,6 +342,31 @@ public class HashUtils {
 	 */
 	public static String sha224Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.SHA224);
+	}
+
+	/**
+	 * Hashes a string using the SHA-224 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal SHA-224 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha224Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha224Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-224 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal SHA-224 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha224Hex(String data) throws NoSuchAlgorithmException {
+		return sha224Hex(data, UTF8);
 	}
 
 	/**
@@ -179,6 +382,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the SHA-256 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the SHA-256 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha256Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha256Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-256 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the SHA-256 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha256Hash(String data) throws NoSuchAlgorithmException {
+		return sha256Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the SHA-256 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -188,6 +416,31 @@ public class HashUtils {
 	 */
 	public static String sha256Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.SHA256);
+	}
+
+	/**
+	 * Hashes a string using the SHA-256 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal SHA-256 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha256Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha256Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-256 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal SHA-256 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha256Hex(String data) throws NoSuchAlgorithmException {
+		return sha256Hex(data, UTF8);
 	}
 
 	/**
@@ -203,6 +456,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the SHA-384 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the SHA-384 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha384Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha384Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-384 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the SHA-384 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha384Hash(String data) throws NoSuchAlgorithmException {
+		return sha384Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the SHA-384 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -212,6 +490,31 @@ public class HashUtils {
 	 */
 	public static String sha384Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.SHA384);
+	}
+
+	/**
+	 * Hashes a string using the SHA-384 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal SHA-384 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha384Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha384Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-384 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal SHA-384 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha384Hex(String data) throws NoSuchAlgorithmException {
+		return sha384Hex(data, UTF8);
 	}
 
 	/**
@@ -227,6 +530,31 @@ public class HashUtils {
 	}
 
 	/**
+	 * Hashes a string using the SHA-512 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the SHA-512 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha512Hash(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha512Hash(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-512 algorithm.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the SHA-512 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static byte[] sha512Hash(String data) throws NoSuchAlgorithmException {
+		return sha512Hash(data, UTF8);
+	}
+
+	/**
 	 * Hashes data using the SHA-512 algorithm. Returns a hexadecimal result.
 	 *
 	 * @since 1.1
@@ -236,6 +564,31 @@ public class HashUtils {
 	 */
 	public static String sha512Hex(byte[] data) throws NoSuchAlgorithmException {
 		return hashHex(data, HashAlgorithm.SHA512);
+	}
+
+	/**
+	 * Hashes a string using the SHA-512 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @param charset the charset of the string
+	 * @return the hexadecimal SHA-512 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha512Hex(String data, Charset charset) throws NoSuchAlgorithmException {
+		return sha512Hex(data.getBytes(charset));
+	}
+
+	/**
+	 * Hashes a string using the SHA-512 algorithm. Returns a hexadecimal result.
+	 *
+	 * @since 1.1
+	 * @param data the string to hash
+	 * @return the hexadecimal SHA-512 hash of the string
+	 * @throws NoSuchAlgorithmException the algorithm is not supported by existing providers
+	 */
+	public static String sha512Hex(String data) throws NoSuchAlgorithmException {
+		return sha512Hex(data, UTF8);
 	}
 
 }
