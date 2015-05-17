@@ -55,7 +55,7 @@ public abstract class BoundedNumber<T> implements Cloneable {
 	 *
 	 * @param n1 the first number to compare
 	 * @param n2 the second number to compare
-	 * @return a negative number if n1 < n2, a positive number if n1 > n2, and 0 if n1 = n2
+	 * @return a negative number if n1 &lt; n2, a positive number if n1 &gt; n2, and 0 if n1 = n2
 	 */
 	protected abstract int compare(T n1, T n2);
 
