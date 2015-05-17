@@ -34,7 +34,7 @@ public class Timer {
 	 * @since 1.0
 	 * @return the nanoseconds that have passed
 	 */
-	public double getNano() {
+	public long getNano() {
 		return System.nanoTime() - start;
 	}
 
@@ -45,7 +45,7 @@ public class Timer {
 	 * @return the seconds that have passed
 	 */
 	public double getSec() {
-		return getNano() / 1_000_000_000;
+		return getNano() / 1_000_000_000.0;
 	}
 
 	/**
