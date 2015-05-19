@@ -1,7 +1,17 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.1"
+	}
+}
+
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'io.codearte.nexus-staging'
 
 group = 'com.mthwate.datlib'
 version = '1.1'
@@ -34,6 +44,10 @@ artifacts {
 
 signing {
 	sign configurations.archives
+}
+
+nexusStaging {
+	packageGroup = "com.mthwate"
 }
 
 uploadArchives {
