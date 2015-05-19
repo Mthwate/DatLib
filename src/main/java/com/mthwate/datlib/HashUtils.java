@@ -12,12 +12,16 @@ public class HashUtils {
 
 	private static final Charset UTF8 = Charset.forName("UTF-8");
 
+	private final static char[] HEX_CHARS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+
 	private static String toHex(byte[] data) {
-		StringBuilder sb = new StringBuilder();
-		for (byte b : data) {
-			sb.append(String.format("%02x", b));
+		char[] chars = new char[data.length * 2];
+		for (int i = 0; i < data.length; i++ ) {
+			int v = data[i] & 0xFF;
+			chars[i * 2] = HEX_CHARS[v >>> 4];
+			chars[i * 2 + 1] = HEX_CHARS[v & 0x0F];
 		}
-		return sb.toString();
+		return new String(chars);
 	}
 
 	/**
