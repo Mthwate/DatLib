@@ -8,7 +8,9 @@ import java.io.File;
  *
  * @author mthwate
  * @since 1.0
+ * @deprecated use {@link java.nio.file.FileVisitor} instead
  */
+@Deprecated
 public interface FileProcessor {
 
 	void onFile(File file);

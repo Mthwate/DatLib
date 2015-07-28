@@ -2,8 +2,13 @@ package com.mthwate.datlib;
 
 import com.mthwate.datlib.fileprocessor.FileCollectionProcessor;
 import com.mthwate.datlib.fileprocessor.FileProcessor;
+import com.mthwate.datlib.filevisitor.FileCollectionVisitor;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 /**
@@ -12,12 +17,16 @@ import java.util.List;
  */
 public class FileUtils {
 
-	public static List<File> listFilesRecursive(File dir) {
-		FileCollectionProcessor processor = new FileCollectionProcessor();
-		traverseDirectory(processor, dir);
-		return processor.getFiles();
+	public static List<Path> listFilesRecursive(File dir) throws IOException {
+		FileCollectionVisitor<Path> visitor = new FileCollectionVisitor<>();
+		Files.walkFileTree(dir.toPath(), visitor);
+		return visitor.getFiles();
 	}
 
+	/**
+	 * @deprecated use {@link Files#walkFileTree(Path, FileVisitor)} instead
+	 */
+	@Deprecated
 	public static void traverseDirectory(FileProcessor processor, File dir) {
 		if (dir.isDirectory()) {
 			processor.onDirectory(dir);
