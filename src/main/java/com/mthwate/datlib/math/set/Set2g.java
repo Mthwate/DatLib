@@ -4,7 +4,7 @@ package com.mthwate.datlib.math.set;
  * @author mthwate
  * @since 1.0
  */
-public abstract class Set2g<S extends Set2g<?, T>, T extends Number> extends SetNg<S, T> {
+public abstract class Set2g<S extends Set2g<?, T>, T> extends SetNg<S, T> {
 
 	protected T _x;
 
@@ -115,6 +115,30 @@ public abstract class Set2g<S extends Set2g<?, T>, T extends Number> extends Set
 		return divNew(n, n);
 	}
 
+	public abstract void modLocal(T x, T y);
+
+	@Override
+	public void modLocal(S set) {
+		modLocal(set.getX(), set.getY());
+	}
+
+	@Override
+	public void modLocal(T n) {
+		modLocal(n, n);
+	}
+
+	public abstract S modNew(T x, T y);
+
+	@Override
+	public S modNew(S set) {
+		return modNew(set.getX(), set.getY());
+	}
+
+	@Override
+	public S modNew(T n) {
+		return modNew(n, n);
+	}
+
 	public T getX() {
 		return _x;
 	}
@@ -125,8 +149,8 @@ public abstract class Set2g<S extends Set2g<?, T>, T extends Number> extends Set
 
 	@Override
 	public int hashCode() {
-		int result = _x.intValue();
-		result = 31 * result + _y.intValue();
+		int result = _x.hashCode();
+		result = 31 * result + _y.hashCode();
 		return result;
 	}
 

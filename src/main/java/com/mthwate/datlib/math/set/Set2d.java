@@ -63,6 +63,17 @@ public class Set2d extends Set2g<Set2d, Double> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Double x, Double y) {
+		_x %= x;
+		_y %= y;
+	}
+
+	@Override
+	public Set2d modNew(Double x, Double y) {
+		return new Set2d(_x % x, _y % y);
+	}
+
+	@Override
 	public Set2d clone() {
 		return new Set2d(this);
 	}

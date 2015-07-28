@@ -120,7 +120,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	 * Divides all items in this set by a number.
 	 *
 	 * @since 1.0
-	 * @param n the number divide the set by
+	 * @param n the number to divide the set by
 	 */
 	public abstract void divLocal(T n);
 
@@ -141,6 +141,40 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	 * @return the resulting set
 	 */
 	public abstract S divNew(T n);
+
+	/**
+	 * Divides modulo this set by another set.
+	 *
+	 * @since 1.2
+	 * @param set the set to divide modulo by
+	 */
+	public abstract void modLocal(S set);
+
+	/**
+	 * Divides modulo all items in this set by a number.
+	 *
+	 * @since 1.2
+	 * @param n the number to divide modulo the set by
+	 */
+	public abstract void modLocal(T n);
+
+	/**
+	 * Divides modulo this set resulting in a new set.
+	 *
+	 * @since 1.2
+	 * @param set the set to divide modulo by
+	 * @return the resulting set
+	 */
+	public abstract S modNew(S set);
+
+	/**
+	 * Divides modulo all items in this set by a number resulting in a new set.
+	 *
+	 * @since 1.2
+	 * @param n the number to divide modulo by
+	 * @return the resulting set
+	 */
+	public abstract S modNew(T n);
 
 	/**
 	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
@@ -228,6 +262,28 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	 */
 	public S div(T n) {
 		return divNew(n);
+	}
+
+	/**
+	 * A groovy operator overloading method to divide modulo all numbers in the set by all numbers in another set.
+	 *
+	 * @since 1.2
+	 * @param set the set to divide modulo from the current set
+	 * @return the resulting set
+	 */
+	public S mod(S set) {
+		return modNew(set);
+	}
+
+	/**
+	 * A groovy operator overloading method to divide modulo all numbers in the set by a number.
+	 *
+	 * @since 1.2
+	 * @param n the number to divide modulo the set by
+	 * @return the resulting set
+	 */
+	public S mod(T n) {
+		return modNew(n);
 	}
 
 	@Override

@@ -67,6 +67,18 @@ public class Set3d extends Set3g<Set3d, Double> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Double x, Double y, Double z) {
+		_x %= x;
+		_y %= y;
+		_z %= z;
+	}
+
+	@Override
+	public Set3d modNew(Double x, Double y, Double z) {
+		return new Set3d(_x % x, _y % y, _z % z);
+	}
+
+	@Override
 	public Set3d clone() {
 		return new Set3d(this);
 	}

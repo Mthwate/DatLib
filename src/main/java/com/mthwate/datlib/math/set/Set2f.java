@@ -63,6 +63,17 @@ public class Set2f extends Set2g<Set2f, Float> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Float x, Float y) {
+		_x %= x;
+		_y %= y;
+	}
+
+	@Override
+	public Set2f modNew(Float x, Float y) {
+		return new Set2f(_x % x, _y % y);
+	}
+
+	@Override
 	public Set2f clone() {
 		return new Set2f(this);
 	}

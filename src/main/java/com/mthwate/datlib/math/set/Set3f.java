@@ -67,6 +67,18 @@ public class Set3f extends Set3g<Set3f, Float> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Float x, Float y, Float z) {
+		_x %= x;
+		_y %= y;
+		_z %= z;
+	}
+
+	@Override
+	public Set3f modNew(Float x, Float y, Float z) {
+		return new Set3f(_x % x, _y % y, _z % z);
+	}
+
+	@Override
 	public Set3f clone() {
 		return new Set3f(this);
 	}

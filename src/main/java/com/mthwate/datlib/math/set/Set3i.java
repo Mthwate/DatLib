@@ -67,6 +67,18 @@ public class Set3i extends Set3g<Set3i, Integer> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Integer x, Integer y, Integer z) {
+		_x %= x;
+		_y %= y;
+		_z %= z;
+	}
+
+	@Override
+	public Set3i modNew(Integer x, Integer y, Integer z) {
+		return new Set3i(_x % x, _y % y, _z % z);
+	}
+
+	@Override
 	public Set3i clone() {
 		return new Set3i(this);
 	}

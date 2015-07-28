@@ -63,6 +63,17 @@ public class Set2i extends Set2g<Set2i, Integer> implements Serializable {
 	}
 
 	@Override
+	public void modLocal(Integer x, Integer y) {
+		_x %= x;
+		_y %= y;
+	}
+
+	@Override
+	public Set2i modNew(Integer x, Integer y) {
+		return new Set2i(_x % x, _y % y);
+	}
+
+	@Override
 	public Set2i clone() {
 		return new Set2i(this);
 	}
