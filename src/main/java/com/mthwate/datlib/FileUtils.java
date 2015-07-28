@@ -1,6 +1,5 @@
 package com.mthwate.datlib;
 
-import com.mthwate.datlib.fileprocessor.FileCollectionProcessor;
 import com.mthwate.datlib.fileprocessor.FileProcessor;
 import com.mthwate.datlib.filevisitor.FileCollectionVisitor;
 
