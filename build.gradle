@@ -14,7 +14,7 @@ apply plugin: 'signing'
 apply plugin: 'io.codearte.nexus-staging'
 
 group = 'com.mthwate.datlib'
-version = '1.1.2-SNAPSHOT'
+version = '1.1.2'
 
 sourceCompatibility = JavaVersion.VERSION_1_7
 
