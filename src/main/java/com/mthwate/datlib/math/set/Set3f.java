@@ -63,7 +63,7 @@ public class Set3f extends Set3g<Set3f, Float> implements Serializable {
 
 	@Override
 	public Set3f divNew(Float x, Float y, Float z) {
-		return new Set3f(_x * x, _y * y, _z * z);
+		return new Set3f(_x / x, _y / y, _z / z);
 	}
 
 	@Override

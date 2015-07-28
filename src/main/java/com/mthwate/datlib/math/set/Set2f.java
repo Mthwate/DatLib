@@ -59,7 +59,7 @@ public class Set2f extends Set2g<Set2f, Float> implements Serializable {
 
 	@Override
 	public Set2f divNew(Float x, Float y) {
-		return new Set2f(_x * x, _y * y);
+		return new Set2f(_x / x, _y / y);
 	}
 
 	@Override

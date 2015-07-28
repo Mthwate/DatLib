@@ -63,7 +63,7 @@ public class Set3d extends Set3g<Set3d, Double> implements Serializable {
 
 	@Override
 	public Set3d divNew(Double x, Double y, Double z) {
-		return new Set3d(_x * x, _y * y, _z * z);
+		return new Set3d(_x / x, _y / y, _z / z);
 	}
 
 	@Override

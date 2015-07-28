@@ -63,7 +63,7 @@ public class Set3i extends Set3g<Set3i, Integer> implements Serializable {
 
 	@Override
 	public Set3i divNew(Integer x, Integer y, Integer z) {
-		return new Set3i(_x * x, _y * y, _z * z);
+		return new Set3i(_x / x, _y / y, _z / z);
 	}
 
 	@Override

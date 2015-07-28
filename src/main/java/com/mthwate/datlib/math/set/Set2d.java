@@ -59,7 +59,7 @@ public class Set2d extends Set2g<Set2d, Double> implements Serializable {
 
 	@Override
 	public Set2d divNew(Double x, Double y) {
-		return new Set2d(_x * x, _y * y);
+		return new Set2d(_x / x, _y / y);
 	}
 
 	@Override
