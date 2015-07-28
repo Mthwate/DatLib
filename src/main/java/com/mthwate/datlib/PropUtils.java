@@ -9,7 +9,9 @@ import java.util.Properties;
 /**
  * @author mthwate
  * @since 1.0
+ * @deprecated use {@link PropertiesFactory} instead
  */
+@Deprecated
 public class PropUtils {
 
 	/**
