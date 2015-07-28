@@ -177,7 +177,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	public abstract S modNew(T n);
 
 	/**
-	 * A groovy operator overloading method to add all numbers in the set by all numbers in another set.
+	 * A Groovy and Kotlin operator overloading method to add all numbers in the set by all numbers in another set.
 	 *
 	 * @since 1.0
 	 * @param set the set to add to the current set
@@ -188,7 +188,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to add all numbers in the set by a number.
+	 * A Groovy and Kotlin operator overloading method to add all numbers in the set by a number.
 	 *
 	 * @since 1.0
 	 * @param n the number to add to the set
@@ -199,7 +199,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to subtract all numbers in a set from all the numbers in this set..
+	 * AGroovy and Kotlin operator overloading method to subtract all numbers in a set from all the numbers in this set..
 	 *
 	 * @since 1.0
 	 * @param set the set to subtract from to the current set
@@ -210,7 +210,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to subtract all numbers in the set by a number.
+	 * A Groovy and Kotlin operator overloading method to subtract all numbers in the set by a number.
 	 *
 	 * @since 1.0
 	 * @param n the number to subtract from the set
@@ -221,7 +221,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 * A Groovy operator overloading method to multiply all numbers in the set by all numbers in another set.
 	 *
 	 * @since 1.0
 	 * @param set the set to multiply the current set by
@@ -232,7 +232,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to multiply all numbers in the set by a number.
+	 * A Groovy operator overloading method to multiply all numbers in the set by a number.
 	 *
 	 * @since 1.0
 	 * @param n the number to multiply the set by
@@ -243,7 +243,29 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to divide all numbers in the set by all numbers in another set.
+	 * A Kotlin operator overloading method to multiply all numbers in the set by all numbers in another set.
+	 *
+	 * @since 1.2
+	 * @param set the set to multiply the current set by
+	 * @return the resulting set
+	 */
+	public S times(S set) {
+		return multNew(set);
+	}
+
+	/**
+	 * A Kotlin operator overloading method to multiply all numbers in the set by a number.
+	 *
+	 * @since 1.2
+	 * @param n the number to multiply the set by
+	 * @return the resulting set
+	 */
+	public S times(T n) {
+		return multNew(n);
+	}
+
+	/**
+	 * A Groovy and Kotlin operator overloading method to divide all numbers in the set by all numbers in another set.
 	 *
 	 * @since 1.0
 	 * @param set the set to divide from the current set
@@ -254,7 +276,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to divide all numbers in the set by a number.
+	 * A Groovy and Kotlin operator overloading method to divide all numbers in the set by a number.
 	 *
 	 * @since 1.0
 	 * @param n the number to divide the set by
@@ -265,7 +287,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to divide modulo all numbers in the set by all numbers in another set.
+	 * A Groovy and Kotlin operator overloading method to divide modulo all numbers in the set by all numbers in another set.
 	 *
 	 * @since 1.2
 	 * @param set the set to divide modulo from the current set
@@ -276,7 +298,7 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	/**
-	 * A groovy operator overloading method to divide modulo all numbers in the set by a number.
+	 * A Groovy and Kotlin operator overloading method to divide modulo all numbers in the set by a number.
 	 *
 	 * @since 1.2
 	 * @param n the number to divide modulo the set by
