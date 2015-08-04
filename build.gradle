@@ -8,7 +8,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'groovy'
 apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: 'io.codearte.nexus-staging'
@@ -23,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    testCompile "org.codehaus.groovy:groovy-test:2.4.0"
+    testCompile 'junit:junit:4.12'
 }
 
 task javadocJar (type: Jar, dependsOn: javadoc) {

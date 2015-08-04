@@ -1,51 +1,69 @@
-package com.mthwate.datlib.math
+package com.mthwate.datlib.math.set;
 
-import com.mthwate.datlib.math.set.Set2i
-import org.junit.Assert
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * @author mthwate
  */
-class Set2iTest extends GroovyTestCase {
+public class Set2iTest {
 
-	void testPlus() {
+	@Test
+	public void testAddNew() {
 		int range = 10;
-		
+
 		for (int x1 = -range; x1 <= range; x1++) {
 			for (int y1 = -range; y1 <= range; y1++) {
 				for (int x2 = -range; x2 <= range; x2++) {
 					for (int y2 = -range; y2 <= range; y2++) {
 						Set2i vect1 = new Set2i(x1, y1);
 						Set2i vect2 = new Set2i(x2, y2);
-						Set2i vect3 = vect1 + vect2;
-						Assert.assertEquals(vect1, new Set2i(x1, y1));
-						Assert.assertEquals(vect2, new Set2i(x2, y2));
+						Set2i vect3 = vect1.addNew(vect2);
 						Assert.assertEquals(vect3, new Set2i(x1 + x2, y1 + y2));
-						vect1 += vect2;
-						Assert.assertEquals(vect1, vect3);
 					}
 				}
 			}
 		}
 	}
 
-	void testGetX() {
+	@Test
+	public void testAddLocal() {
 		int range = 10;
-		
-		for (int i = -range; i <= range; i++) {
+
+		for (int x1 = -range; x1 <= range; x1++) {
+			for (int y1 = -range; y1 <= range; y1++) {
+				for (int x2 = -range; x2 <= range; x2++) {
+					for (int y2 = -range; y2 <= range; y2++) {
+						Set2i vect1 = new Set2i(x1, y1);
+						Set2i vect2 = new Set2i(x2, y2);
+						vect1.addLocal(vect2);
+						Assert.assertEquals(vect1, new Set2i(x1 + x2, y1 + y2));
+					}
+				}
+			}
+		}
+	}
+
+	@Test
+	public void testGetX() {
+		int range = 10;
+
+		for (Integer i = -range; i <= range; i++) {
 			Assert.assertEquals(new Set2i(i, 0).getX(), i);
 		}
 	}
 
-	void testGetY() {
+	@Test
+	public void testGetY() {
 		int range = 10;
-		
-		for (int i = -range; i <= range; i++) {
+
+		for (Integer i = -range; i <= range; i++) {
 			Assert.assertEquals(new Set2i(0, i).getY(), i);
 		}
 	}
 
-	void testEquals() {
+	@Test
+	public void testEquals() {
 		Set2i vect1 = new Set2i(1, 2);
 		Set2i vect2 = new Set2i(1, 2);
 		Set2i vect3 = new Set2i(2, 1);
@@ -58,7 +76,8 @@ class Set2iTest extends GroovyTestCase {
 		Assert.assertNotEquals(vect1, vect3);
 	}
 
-	void testToString() {
+	@Test
+	public void testToString() {
 		Set2i vect = new Set2i(1, 2);
 		Assert.assertEquals(vect.toString(), "(1, 2)");
 	}
