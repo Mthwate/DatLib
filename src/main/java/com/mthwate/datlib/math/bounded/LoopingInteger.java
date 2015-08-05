@@ -1,7 +1,6 @@
 package com.mthwate.datlib.math.bounded;
 
 import com.mthwate.datlib.math.calculator.Calculator;
-import com.mthwate.datlib.math.calculator.IntegerCalculator;
 
 /**
  * @author mthwate
