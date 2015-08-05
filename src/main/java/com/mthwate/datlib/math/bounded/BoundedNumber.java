@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.bounded;
 
+import com.mthwate.datlib.math.calculator.Calculator;
+
 /**
  * A number whose value has an upper and lower bound.
  * When performing an operation on this number, if the value would normally exceed these bounds, it only reaches them.
@@ -8,15 +10,23 @@ package com.mthwate.datlib.math.bounded;
  * @author mthwate
  * @since 1.1
  */
-public abstract class BoundedNumber<T> implements Cloneable {
-
-	protected T value;
+public abstract class BoundedNumber<S extends BoundedNumber, T> extends BaseBounded<S, T> {
 
 	protected final T min;
 
 	protected final T max;
 
-	public BoundedNumber(T value, T min, T max) {
+	public BoundedNumber(T value, T min, T max, Calculator<T> calculator) {
+		super(calculator);
+
+		if (value == null) {
+			throw new IllegalArgumentException("Value cannot be null");
+		}
+
+		if (min != null && max != null && calculator.compare(min, max) > 0) {
+			throw new IllegalArgumentException("Min cannot be greater than max");
+		}
+
 		this.min = min;
 		this.max = max;
 		set(value);
@@ -26,6 +36,7 @@ public abstract class BoundedNumber<T> implements Cloneable {
 		return value;
 	}
 
+	@Override
 	public void set(T n) {
 		value = boundLower(boundUpper(n));
 	}
@@ -33,7 +44,7 @@ public abstract class BoundedNumber<T> implements Cloneable {
 	protected T boundLower(T n) {
 		T i = n;
 
-		if (min != null && compare(min, i) > 0) {
+		if (min != null && calculator.compare(min, i) > 0) {
 			i = min;
 		}
 
@@ -43,36 +54,11 @@ public abstract class BoundedNumber<T> implements Cloneable {
 	protected T boundUpper(T n) {
 		T i = n;
 
-		if (max != null && compare(max, i) < 0) {
+		if (max != null && calculator.compare(max, i) < 0) {
 			i = max;
 		}
 
 		return i;
 	}
-
-	/**
-	 * Compares 2 numbers.
-	 *
-	 * @param n1 the first number to compare
-	 * @param n2 the second number to compare
-	 * @return a negative number if n1 &lt; n2, a positive number if n1 &gt; n2, and 0 if n1 = n2
-	 */
-	protected abstract int compare(T n1, T n2);
-
-	public abstract void addLocal(T n);
-
-	public abstract BoundedNumber<T> addNew(T n);
-
-	public abstract void subtractLocal(T n);
-
-	public abstract BoundedNumber<T> subtractNew(T n);
-
-	public abstract void multLocal(T n);
-
-	public abstract BoundedNumber<T> multNew(T n);
-
-	public abstract void divLocal(T n);
-
-	public abstract BoundedNumber<T> divNew(T n);
 
 }

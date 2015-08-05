@@ -1,5 +1,8 @@
 package com.mthwate.datlib.math.bounded;
 
+import com.mthwate.datlib.math.calculator.Calculator;
+import com.mthwate.datlib.math.calculator.IntegerCalculator;
+
 /**
  * An integer whose value has an upper and lower bound.
  * When performing an operation on this integer, if the value would normally exceed these bounds, it only reaches them.
@@ -8,50 +11,14 @@ package com.mthwate.datlib.math.bounded;
  * @author mthwate
  * @since 1.1
  */
-public class BoundedInteger extends BoundedComparable<Integer> {
+public class BoundedInteger extends BoundedNumber<BoundedInteger, Integer> {
 	
 	public BoundedInteger(Integer value, Integer min, Integer max) {
-		super(value, min, max);
+		super(value, min, max, Calculator.INTEGER_CALCULATOR);
 	}
 
 	@Override
-	public void addLocal(Integer n) {
-		set(value + n);
+	public BoundedInteger clone() {
+		return new BoundedInteger(this.value, this.min, this.max);
 	}
-
-	@Override
-	public BoundedInteger addNew(Integer n) {
-		return new BoundedInteger(value + n, min, max);
-	}
-
-	@Override
-	public void subtractLocal(Integer n) {
-		set(value - n);
-	}
-
-	@Override
-	public BoundedInteger subtractNew(Integer n) {
-		return new BoundedInteger(value - n, min, max);
-	}
-
-	@Override
-	public void multLocal(Integer n) {
-		set(value * n);
-	}
-
-	@Override
-	public BoundedInteger multNew(Integer n) {
-		return new BoundedInteger(value * n, min, max);
-	}
-
-	@Override
-	public void divLocal(Integer n) {
-		set(value / n);
-	}
-
-	@Override
-	public BoundedInteger divNew(Integer n) {
-		return new BoundedInteger(value / n, min, max);
-	}
-
 }

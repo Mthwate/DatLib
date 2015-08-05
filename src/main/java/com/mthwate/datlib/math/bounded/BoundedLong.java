@@ -1,5 +1,8 @@
 package com.mthwate.datlib.math.bounded;
 
+import com.mthwate.datlib.math.calculator.Calculator;
+import com.mthwate.datlib.math.calculator.LongCalculator;
+
 /**
  * A long whose value has an upper and lower bound.
  * When performing an operation on this long, if the value would normally exceed these bounds, it only reaches them.
@@ -8,50 +11,14 @@ package com.mthwate.datlib.math.bounded;
  * @author mthwate
  * @since 1.1
  */
-public class BoundedLong extends BoundedComparable<Long> {
+public class BoundedLong extends BoundedNumber<BoundedLong, Long> {
 	
 	public BoundedLong(Long value, Long min, Long max) {
-		super(value, min, max);
+		super(value, min, max, Calculator.LONG_CALCULATOR);
 	}
 
 	@Override
-	public void addLocal(Long n) {
-		set(value + n);
+	public BoundedLong clone() {
+		return new BoundedLong(this.value, this.min, this.max);
 	}
-
-	@Override
-	public BoundedLong addNew(Long n) {
-		return new BoundedLong(value + n, min, max);
-	}
-
-	@Override
-	public void subtractLocal(Long n) {
-		set(value - n);
-	}
-
-	@Override
-	public BoundedLong subtractNew(Long n) {
-		return new BoundedLong(value - n, min, max);
-	}
-
-	@Override
-	public void multLocal(Long n) {
-		set(value * n);
-	}
-
-	@Override
-	public BoundedLong multNew(Long n) {
-		return new BoundedLong(value * n, min, max);
-	}
-
-	@Override
-	public void divLocal(Long n) {
-		set(value / n);
-	}
-
-	@Override
-	public BoundedLong divNew(Long n) {
-		return new BoundedLong(value / n, min, max);
-	}
-	
 }
