@@ -1,5 +1,7 @@
 package com.mthwate.datlib;
 
+import java.lang.reflect.Array;
+
 /**
  * @author lordxarus
  * @since 1.2
@@ -7,26 +9,20 @@ package com.mthwate.datlib;
 
 public class ArrayUtils {
 
-    public static Object[][] getNeighbors(Object[][] array, int x, int y) {
-        Object[][] neighbors = new Object[3][3];
-        int alive = 0;
-        int dead = 0;
+	public static <T> T[][] getNeighbors(T[][] array, int x, int y, Class<T> type) {
+		T[][] neighbors = (T[][]) Array.newInstance(type, 3, 3);
 
-        int[][] modifiers = {
-                {-1, 1},{ 0, 1},{ 1, 1},
-                {-1, 0},        { 1, 0},
-                {-1,-1},{ 0,-1},{ 1,-1}
-        };
+		for (int ix = -1; ix <= 1; ix++) {
+			for (int iy = -1; iy <= 1; iy++) {
+				int nx = ix + y;
+				int ny = iy + y;
+				if (nx >= 0 && ny >= 0 && nx < array.length && ny < array[0].length) {
+					neighbors[ix+1][iy+1] = array[nx][ny];
+				}
+			}
+		}
 
-        for (int[] modifier : modifiers) {
-            int nx = modifier[0] + x;
-            int ny = modifier[1] + y;
-            if (nx >= 0 && ny >= 0 && nx < array.length && ny < array[0].length) {
-                neighbors[nx][ny] = array[nx][ny];
-            }
-        }
-
-        return neighbors;
-    }
+		return neighbors;
+	}
 
 }
