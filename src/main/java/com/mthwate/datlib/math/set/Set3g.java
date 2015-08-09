@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.set;
 
+import com.mthwate.datlib.math.calculator.Calculator;
+
 /**
  * @author mthwate
  * @since 1.0
@@ -12,17 +14,24 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 
 	protected T _z;
 
-	public Set3g(T x, T y, T z) {
+	protected final Calculator<T> calculator;
+
+	public Set3g(T x, T y, T z, Calculator<T> calculator) {
 		_x = x;
 		_y = y;
 		_z = z;
+		this.calculator = calculator;
 	}
 
 	public Set3g(Set3g<S, T> set) {
-		this(set.getX(), set.getY(), set.getZ());
+		this(set.getX(), set.getY(), set.getZ(), set.calculator);
 	}
 
-	public abstract void addLocal(T x, T y, T z);
+	public void addLocal(T x, T y, T z) {
+		_x = calculator.add(_x, x);
+		_y = calculator.add(_y, y);
+		_z = calculator.add(_z, z);
+	}
 
 	@Override
 	public void addLocal(S set) {
@@ -34,7 +43,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		addLocal(n, n, n);
 	}
 
-	public abstract S addNew(T x, T y, T z);
+	public S addNew(T x, T y, T z) {
+		S clone = this.clone();
+		clone.addLocal(x, y, z);
+		return clone;
+	}
 
 	@Override
 	public S addNew(S set) {
@@ -46,7 +59,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		return addNew(n, n, n);
 	}
 
-	public abstract void subtractLocal(T x, T y, T z);
+	public void subtractLocal(T x, T y, T z) {
+		_x = calculator.subtract(_x, x);
+		_y = calculator.subtract(_y, y);
+		_z = calculator.subtract(_z, z);
+	}
 
 	@Override
 	public void subtractLocal(S set) {
@@ -58,7 +75,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		subtractLocal(n, n, n);
 	}
 
-	public abstract S subtractNew(T x, T y, T z);
+	public S subtractNew(T x, T y, T z) {
+		S clone = this.clone();
+		clone.subtractLocal(x, y, z);
+		return clone;
+	}
 
 	@Override
 	public S subtractNew(S set) {
@@ -70,7 +91,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		return subtractNew(n, n, n);
 	}
 
-	public abstract void multLocal(T x, T y, T z);
+	public void multLocal(T x, T y, T z) {
+		_x = calculator.multiply(_x, x);
+		_y = calculator.multiply(_y, y);
+		_z = calculator.multiply(_z, z);
+	}
 
 	@Override
 	public void multLocal(S set) {
@@ -82,7 +107,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		multLocal(n, n, n);
 	}
 
-	public abstract S multNew(T x, T y, T z);
+	public S multNew(T x, T y, T z) {
+		S clone = this.clone();
+		clone.multLocal(x, y, z);
+		return clone;
+	}
 
 	@Override
 	public S multNew(S set) {
@@ -94,7 +123,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		return multNew(n, n, n);
 	}
 
-	public abstract void divLocal(T x, T y, T z);
+	public void divLocal(T x, T y, T z) {
+		_x = calculator.divide(_x, x);
+		_y = calculator.divide(_y, y);
+		_z = calculator.divide(_z, z);
+	}
 
 	@Override
 	public void divLocal(S set) {
@@ -106,7 +139,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		divLocal(n, n, n);
 	}
 
-	public abstract S divNew(T x, T y, T z);
+	public S divNew(T x, T y, T z) {
+		S clone = this.clone();
+		clone.divLocal(x, y, z);
+		return clone;
+	}
 
 	@Override
 	public S divNew(S set) {
@@ -118,7 +155,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		return divNew(n, n, n);
 	}
 
-	public abstract void modLocal(T x, T y, T z);
+	public void modLocal(T x, T y, T z) {
+		_x = calculator.modulo(_x, x);
+		_y = calculator.modulo(_y, y);
+		_z = calculator.modulo(_z, z);
+	}
 
 	@Override
 	public void modLocal(S set) {
@@ -130,7 +171,11 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 		modLocal(n, n, n);
 	}
 
-	public abstract S modNew(T x, T y, T z);
+	public S modNew(T x, T y, T z) {
+		S clone = this.clone();
+		clone.modLocal(x, y, z);
+		return clone;
+	}
 
 	@Override
 	public S modNew(S set) {

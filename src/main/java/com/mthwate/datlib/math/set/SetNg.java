@@ -309,6 +309,6 @@ public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 	}
 
 	@Override
-	public abstract SetNg<S, T> clone();
+	public abstract S clone();
 
 }
