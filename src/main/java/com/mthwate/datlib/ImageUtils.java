@@ -47,17 +47,4 @@ public class ImageUtils {
 		return diff / n / 255.0;
 	}
 
-	/**
-	 * Remove all pixels of the image not in the rectangle
-	 * @param src The image to be cropped
-	 * @param x1 The X of the left bound of the rectangle
-	 * @param y1 The Y of the left bound of the rectangle
-	 * @param x2 The X of the right bound of the rectangle
-	 * @param y2 The Y of the right bound of the rectangle
-	 * @return The cropped imagegitu
-	 */
-	public static BufferedImage cropImage(BufferedImage src, int x1, int y1, int x2, int y2) {
-		return src.getSubimage(x1, y2, x2, y2);
-	}
-
 }
