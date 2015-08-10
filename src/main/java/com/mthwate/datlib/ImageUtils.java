@@ -20,31 +20,34 @@ public class ImageUtils {
 	 */
 	public static double calculateImageDiff(BufferedImage img1, BufferedImage img2) {
 
-		int width1 = img1.getWidth(null);
-		int width2 = img2.getWidth(null);
-		int height1 = img1.getHeight(null);
-		int height2 = img2.getHeight(null);
-		if ((width1 != width2) || (height1 != height2)) {
+		int width = img1.getWidth();
+		int height = img1.getHeight();
+
+		if ((width != img2.getWidth()) || (height != img2.getHeight())) {
 			throw new IllegalArgumentException("Image dimensions do not match");
 		}
+
 		long diff = 0;
-		for (int y = 0; y < height1; y++) {
-			for (int x = 0; x < width1; x++) {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
 				int rgb1 = img1.getRGB(x, y);
 				int rgb2 = img2.getRGB(x, y);
-				int r1 = (rgb1 >> 16) & 0xff;
-				int g1 = (rgb1 >>  8) & 0xff;
-				int b1 = (rgb1	  ) & 0xff;
-				int r2 = (rgb2 >> 16) & 0xff;
-				int g2 = (rgb2 >>  8) & 0xff;
-				int b2 = (rgb2	  ) & 0xff;
+				int a1 = ColorUtils.getAlpha(rgb1);
+				int r1 = ColorUtils.getRed(rgb1);
+				int g1 = ColorUtils.getGreen(rgb1);
+				int b1 = ColorUtils.getBlue(rgb1);
+				int a2 = ColorUtils.getAlpha(rgb2);
+				int r2 = ColorUtils.getRed(rgb2);
+				int g2 = ColorUtils.getGreen(rgb2);
+				int b2 = ColorUtils.getBlue(rgb2);
+				diff += Math.abs(a1 - a2);
 				diff += Math.abs(r1 - r2);
 				diff += Math.abs(g1 - g2);
 				diff += Math.abs(b1 - b2);
 			}
 		}
-		double n = width1 * height1 * 3;
-		return diff / n / 255.0;
+		long n = width * height * 4;
+		return diff / 255.0 / n;
 	}
 
 }
