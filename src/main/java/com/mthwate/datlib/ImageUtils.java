@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 
 public class ImageUtils {
 
-
 	/**
 	 * The total difference between two images calculated as the sum of the difference in RGB values of each pixel
 	 * the images MUST be the same dimensions.
