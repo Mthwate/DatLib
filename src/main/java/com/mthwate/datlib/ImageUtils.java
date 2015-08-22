@@ -14,11 +14,12 @@ public class ImageUtils {
 	 * The total difference between two images calculated as the sum of the difference in RGB values of each pixel
 	 * the images MUST be the same dimensions.
 	 *
-	 * @param img1 The first image to be compared
-	 * @param img2 The second image to be compared
-	 * @return The difference between the two images as an arbitrary double
+	 * @since 1.2
+	 * @param img1 the first image to be compared
+	 * @param img2 the second image to be compared
+	 * @return the difference between the two images
 	 */
-	public static double calculateImageDiff(BufferedImage img1, BufferedImage img2) {
+	public static long totalImageDiff(BufferedImage img1, BufferedImage img2) {
 
 		int width = img1.getWidth();
 		int height = img1.getHeight();
@@ -46,8 +47,20 @@ public class ImageUtils {
 				diff += Math.abs(b1 - b2);
 			}
 		}
-		long n = width * height * 4;
-		return diff / 255.0 / n;
+
+		return diff;
+	}
+
+	/**
+	 * Checks if two images have any differences.
+	 *
+	 * @since 1.2
+	 * @param img1 the first image to be compared
+	 * @param img2 the second image to be compared
+	 * @return if the images differ or not
+	 */
+	public static boolean imageDiffer(BufferedImage img1, BufferedImage img2) {
+		return totalImageDiff(img1, img2) > 0;
 	}
 
 }
