@@ -6,7 +6,7 @@ import com.mthwate.datlib.math.calculator.Calculator;
  * @author mthwate
  * @since 1.2
  */
-public abstract class LoopingNumber<S extends LoopingNumber, T> extends BaseBounded<S, T> {
+public abstract class LoopingNumber<S extends LoopingNumber<S, T>, T> extends BaseBounded<S, T> {
 
 	protected final T inclusive;
 

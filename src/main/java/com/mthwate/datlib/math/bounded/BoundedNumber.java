@@ -10,7 +10,7 @@ import com.mthwate.datlib.math.calculator.Calculator;
  * @author mthwate
  * @since 1.1
  */
-public abstract class BoundedNumber<S extends BoundedNumber, T> extends BaseBounded<S, T> {
+public abstract class BoundedNumber<S extends BoundedNumber<S, T>, T> extends BaseBounded<S, T> {
 
 	protected final T min;
 

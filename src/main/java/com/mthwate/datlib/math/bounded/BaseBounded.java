@@ -6,7 +6,7 @@ import com.mthwate.datlib.math.calculator.Calculator;
  * @author mthwate
  * @since 1.2
  */
-public abstract class BaseBounded<S extends BaseBounded, T> implements Cloneable {
+public abstract class BaseBounded<S extends BaseBounded<S, T>, T> implements Cloneable {
 
 	protected T value;
 
