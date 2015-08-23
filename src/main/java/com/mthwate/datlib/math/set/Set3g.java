@@ -14,7 +14,7 @@ public abstract class Set3g<S extends Set3g<?, T>, T> extends SetNg<S, T> {
 
 	protected T _z;
 
-	protected final Calculator<T> calculator;
+	protected final transient Calculator<T> calculator;
 
 	public Set3g(T x, T y, T z, Calculator<T> calculator) {
 		_x = x;

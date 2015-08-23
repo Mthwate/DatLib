@@ -12,7 +12,7 @@ public abstract class Set2g<S extends Set2g<?, T>, T> extends SetNg<S, T> {
 
 	protected T _y;
 
-	protected final Calculator<T> calculator;
+	protected final transient Calculator<T> calculator;
 
 	public Set2g(T x, T y, Calculator<T> calculator) {
 		_x = x;
