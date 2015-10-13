@@ -1,7 +1,5 @@
 package com.mthwate.datlib.fileprocessor;
 
-import com.mthwate.datlib.filevisitor.FileCollectionVisitor;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +9,7 @@ import java.util.List;
  *
  * @author mthwate
  * @since 1.0
- * @deprecated use {@link FileCollectionVisitor} instead
+ * @deprecated use {@link com.mthwate.datlib.filevisitor.FileCollectionVisitor} instead
  */
 @Deprecated
 public class FileCollectionProcessor implements FileProcessor {

@@ -1,11 +1,11 @@
 package com.mthwate.datlib;
 
+
 import com.mthwate.datlib.fileprocessor.FileProcessor;
 import com.mthwate.datlib.filevisitor.FileCollectionVisitor;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileVisitor;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -23,7 +23,7 @@ public class FileUtils {
 	}
 
 	/**
-	 * @deprecated use {@link Files#walkFileTree(Path, FileVisitor)} instead
+	 * @deprecated use {@link Files#walkFileTree(Path, java.nio.file.FileVisitor)} instead
 	 */
 	@Deprecated
 	public static void traverseDirectory(FileProcessor processor, File dir) {
