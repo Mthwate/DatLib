@@ -6,6 +6,8 @@ package com.mthwate.datlib.math.calculator;
  */
 public interface Calculator<T> {
 
+	BigIntegerCalculator BIG_INTEGER_CALCULATOR = new BigIntegerCalculator();
+
 	ByteCalculator BYTE_CALCULATOR = new ByteCalculator();
 
 	DoubleCalculator DOUBLE_CALCULATOR = new DoubleCalculator();
@@ -35,5 +37,9 @@ public interface Calculator<T> {
 	T power(T n1, T n2);
 
 	int compare(T n1, T n2);
+
+	T getZero();
+
+	T getOne();
 
 }

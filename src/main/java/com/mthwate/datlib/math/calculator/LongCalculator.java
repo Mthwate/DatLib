@@ -46,4 +46,14 @@ public class LongCalculator implements Calculator<Long> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Long getZero() {
+		return 0L;
+	}
+
+	@Override
+	public Long getOne() {
+		return 1L;
+	}
+
 }

@@ -46,4 +46,14 @@ public class FloatCalculator implements Calculator<Float> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Float getZero() {
+		return 0F;
+	}
+
+	@Override
+	public Float getOne() {
+		return 1F;
+	}
+
 }

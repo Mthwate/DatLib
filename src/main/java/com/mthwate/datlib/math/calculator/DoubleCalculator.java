@@ -46,4 +46,14 @@ public class DoubleCalculator implements Calculator<Double> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Double getZero() {
+		return 0D;
+	}
+
+	@Override
+	public Double getOne() {
+		return 1D;
+	}
+
 }

@@ -46,4 +46,14 @@ public class ShortCalculator implements Calculator<Short> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Short getZero() {
+		return 0;
+	}
+
+	@Override
+	public Short getOne() {
+		return 1;
+	}
+
 }

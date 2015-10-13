@@ -46,4 +46,14 @@ public class IntegerCalculator implements Calculator<Integer> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Integer getZero() {
+		return 0;
+	}
+
+	@Override
+	public Integer getOne() {
+		return 1;
+	}
+
 }

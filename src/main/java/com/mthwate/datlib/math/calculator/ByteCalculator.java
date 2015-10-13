@@ -46,4 +46,14 @@ public class ByteCalculator implements Calculator<Byte> {
 		return n1.compareTo(n2);
 	}
 
+	@Override
+	public Byte getZero() {
+		return 0;
+	}
+
+	@Override
+	public Byte getOne() {
+		return 1;
+	}
+
 }
