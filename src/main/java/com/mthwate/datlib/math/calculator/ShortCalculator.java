@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.calculator;
 
+import com.mthwate.datlib.math.MathUtils;
+
 /**
  * @author mthwate
  * @since 1.2
@@ -47,6 +49,16 @@ public class ShortCalculator implements Calculator<Short> {
 	@Override
 	public Short power(Short n1, Short n2) {
 		return (short) Math.pow(n1, n2);
+	}
+
+	@Override
+	public Short gcd(Short n1, Short n2) {
+		return (short) MathUtils.gcd(n1, n2);
+	}
+
+	@Override
+	public Short lcm(Short n1, Short n2) {
+		return (short) MathUtils.lcm(n1, n2);
 	}
 
 	@Override

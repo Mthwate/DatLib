@@ -36,6 +36,10 @@ public interface Calculator<T> {
 
 	T power(T n1, T n2);
 
+	T gcd(T n1, T n2);
+
+	T lcm(T n1, T n2);
+
 	int compare(T n1, T n2);
 
 	T getZero();

@@ -50,6 +50,16 @@ public class FloatCalculator implements Calculator<Float> {
 	}
 
 	@Override
+	public Float gcd(Float n1, Float n2) {
+		throw new UnsupportedOperationException("Cannot calculate the GCD of 2 floats");
+	}
+
+	@Override
+	public Float lcm(Float n1, Float n2) {
+		throw new UnsupportedOperationException("Cannot calculate the LCM of 2 floats");
+	}
+
+	@Override
 	public int compare(Float n1, Float n2) {
 		return n1.compareTo(n2);
 	}

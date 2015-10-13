@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.calculator;
 
+import com.mthwate.datlib.math.MathUtils;
+
 /**
  * @author mthwate
  * @since 1.2
@@ -47,6 +49,16 @@ public class LongCalculator implements Calculator<Long> {
 	@Override
 	public Long power(Long n1, Long n2) {
 		return (long) Math.pow(n1, n2);
+	}
+
+	@Override
+	public Long gcd(Long n1, Long n2) {
+		return MathUtils.gcd(n1, n2);
+	}
+
+	@Override
+	public Long lcm(Long n1, Long n2) {
+		return MathUtils.lcm(n1, n2);
 	}
 
 	@Override

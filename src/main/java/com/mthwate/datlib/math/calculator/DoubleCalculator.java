@@ -50,6 +50,16 @@ public class DoubleCalculator implements Calculator<Double> {
 	}
 
 	@Override
+	public Double gcd(Double n1, Double n2) {
+		throw new UnsupportedOperationException("Cannot calculate the GCD of 2 doubles");
+	}
+
+	@Override
+	public Double lcm(Double n1, Double n2) {
+		throw new UnsupportedOperationException("Cannot calculate the LCM of 2 doubles");
+	}
+
+	@Override
 	public int compare(Double n1, Double n2) {
 		return n1.compareTo(n2);
 	}

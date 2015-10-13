@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.calculator;
 
+import com.mthwate.datlib.math.MathUtils;
+
 /**
  * @author mthwate
  * @since 1.2
@@ -47,6 +49,16 @@ public class IntegerCalculator implements Calculator<Integer> {
 	@Override
 	public Integer power(Integer n1, Integer n2) {
 		return (int) Math.pow(n1, n2);
+	}
+
+	@Override
+	public Integer gcd(Integer n1, Integer n2) {
+		return MathUtils.gcd(n1, n2);
+	}
+
+	@Override
+	public Integer lcm(Integer n1, Integer n2) {
+		return MathUtils.lcm(n1, n2);
 	}
 
 	@Override

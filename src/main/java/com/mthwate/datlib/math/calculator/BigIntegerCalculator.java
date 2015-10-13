@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.calculator;
 
+import com.mthwate.datlib.math.MathUtils;
+
 import java.math.BigInteger;
 
 /**
@@ -48,6 +50,16 @@ public class BigIntegerCalculator implements Calculator<BigInteger> {
 	@Override
 	public BigInteger power(BigInteger n1, BigInteger n2) {
 		return n1.pow(n2.intValue());
+	}
+
+	@Override
+	public BigInteger gcd(BigInteger n1, BigInteger n2) {
+		return MathUtils.gcd(n1, n2);
+	}
+
+	@Override
+	public BigInteger lcm(BigInteger n1, BigInteger n2) {
+		return MathUtils.lcm(n1, n2);
 	}
 
 	@Override

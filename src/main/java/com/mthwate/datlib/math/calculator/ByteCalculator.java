@@ -1,5 +1,7 @@
 package com.mthwate.datlib.math.calculator;
 
+import com.mthwate.datlib.math.MathUtils;
+
 /**
  * @author mthwate
  * @since 1.2
@@ -47,6 +49,16 @@ public class ByteCalculator implements Calculator<Byte> {
 	@Override
 	public Byte power(Byte n1, Byte n2) {
 		return (byte) Math.pow(n1, n2);
+	}
+
+	@Override
+	public Byte gcd(Byte n1, Byte n2) {
+		return (byte) MathUtils.gcd(n1, n2);
+	}
+
+	@Override
+	public Byte lcm(Byte n1, Byte n2) {
+		return (byte) MathUtils.lcm(n1, n2);
 	}
 
 	@Override
