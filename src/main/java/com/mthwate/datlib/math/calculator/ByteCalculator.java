@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class ByteCalculator implements Calculator<Byte> {
 
+	private static final ByteCalculator INSTANCE = new ByteCalculator();
+
+	public static ByteCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private ByteCalculator() {}
+
 	@Override
 	public Byte add(Byte n1, Byte n2) {
 		return (byte) (n1 + n2);

@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class LongCalculator implements Calculator<Long> {
 
+	private static final LongCalculator INSTANCE = new LongCalculator();
+
+	public static LongCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private LongCalculator() {}
+
 	@Override
 	public Long add(Long n1, Long n2) {
 		return n1 + n2;

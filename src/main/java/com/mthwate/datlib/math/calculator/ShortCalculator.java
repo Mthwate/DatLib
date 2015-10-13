@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class ShortCalculator implements Calculator<Short> {
 
+	private static final ShortCalculator INSTANCE = new ShortCalculator();
+
+	public static ShortCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private ShortCalculator() {}
+
 	@Override
 	public Short add(Short n1, Short n2) {
 		return (short) (n1 + n2);

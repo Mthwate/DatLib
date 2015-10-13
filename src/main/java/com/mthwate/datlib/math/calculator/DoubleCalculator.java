@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class DoubleCalculator implements Calculator<Double> {
 
+	private static final DoubleCalculator INSTANCE = new DoubleCalculator();
+
+	public static DoubleCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private DoubleCalculator() {}
+
 	@Override
 	public Double add(Double n1, Double n2) {
 		return n1 + n2;

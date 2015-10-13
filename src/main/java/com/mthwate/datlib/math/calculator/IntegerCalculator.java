@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class IntegerCalculator implements Calculator<Integer> {
 
+	private static final IntegerCalculator INSTANCE = new IntegerCalculator();
+
+	public static IntegerCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private IntegerCalculator() {}
+
 	@Override
 	public Integer add(Integer n1, Integer n2) {
 		return n1 + n2;

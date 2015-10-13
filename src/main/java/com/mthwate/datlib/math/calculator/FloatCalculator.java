@@ -6,6 +6,14 @@ package com.mthwate.datlib.math.calculator;
  */
 public class FloatCalculator implements Calculator<Float> {
 
+	private static final FloatCalculator INSTANCE = new FloatCalculator();
+
+	public static FloatCalculator getInstance() {
+		return INSTANCE;
+	}
+
+	private FloatCalculator() {}
+
 	@Override
 	public Float add(Float n1, Float n2) {
 		return n1 + n2;
