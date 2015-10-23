@@ -4,8 +4,13 @@ import com.mthwate.datlib.math.calculator.Calculator;
 
 /**
  * @author mthwate
+ * @since 1.3
  */
 public class FractionInteger extends Fraction<FractionInteger, Integer> {
+
+	public FractionInteger(Integer numerator) {
+		super(numerator, 1, Calculator.INTEGER_CALCULATOR);
+	}
 
 	public FractionInteger(Integer numerator, Integer denominator) {
 		super(numerator, denominator, Calculator.INTEGER_CALCULATOR);

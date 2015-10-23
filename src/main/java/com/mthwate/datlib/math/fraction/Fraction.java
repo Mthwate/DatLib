@@ -4,6 +4,7 @@ import com.mthwate.datlib.math.calculator.Calculator;
 
 /**
  * @author mthwate
+ * @since 1.3
  */
 public abstract class Fraction<S extends Fraction<?, T>, T> implements Comparable<S> {
 
