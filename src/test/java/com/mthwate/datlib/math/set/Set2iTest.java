@@ -1,4 +1,4 @@
-package com.mthwate.datlib.math.vector;
+package com.mthwate.datlib.math.set;
 
 import org.junit.Assert;
 import org.junit.Test;
