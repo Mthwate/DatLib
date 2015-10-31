@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author mthwate
  * @since 1.0
  */
+@Deprecated
 public class Set3i extends Set3g<Set3i, Integer> implements Serializable {
 
 	private static final long serialVersionUID = 5969787431476209188L;

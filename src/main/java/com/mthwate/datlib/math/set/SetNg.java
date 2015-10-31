@@ -4,6 +4,7 @@ package com.mthwate.datlib.math.set;
  * @author mthwate
  * @since 1.0
  */
+@Deprecated
 public abstract class SetNg<S extends SetNg, T> implements Cloneable {
 
 	/**

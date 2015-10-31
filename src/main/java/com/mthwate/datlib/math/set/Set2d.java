@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author mthwate
  * @since 1.0
  */
+@Deprecated
 public class Set2d extends Set2g<Set2d, Double> implements Serializable {
 
 	private static final long serialVersionUID = 7545185431305740320L;

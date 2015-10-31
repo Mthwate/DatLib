@@ -6,6 +6,7 @@ import com.mthwate.datlib.math.calculator.Calculator;
  * @author mthwate
  * @since 1.0
  */
+@Deprecated
 public abstract class Set2g<S extends Set2g<?, T>, T> extends SetNg<S, T> {
 
 	protected T _x;

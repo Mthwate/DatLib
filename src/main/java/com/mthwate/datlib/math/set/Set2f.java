@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @author mthwate
  * @since 1.0
  */
+@Deprecated
 public class Set2f extends Set2g<Set2f, Float> implements Serializable {
 
 	private static final long serialVersionUID = -4566815787927882365L;
