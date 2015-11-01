@@ -10,8 +10,16 @@ import java.math.BigInteger;
  */
 public class FractionBigInteger extends Fraction<FractionBigInteger, BigInteger> {
 
+	public FractionBigInteger(long numerator) {
+		super(BigInteger.valueOf(numerator), BigInteger.ONE, Calculator.BIG_INTEGER_CALCULATOR);
+	}
+
 	public FractionBigInteger(BigInteger numerator) {
 		super(numerator, BigInteger.ONE, Calculator.BIG_INTEGER_CALCULATOR);
+	}
+
+	public FractionBigInteger(long numerator, long denominator) {
+		super(BigInteger.valueOf(numerator), BigInteger.valueOf(denominator), Calculator.BIG_INTEGER_CALCULATOR);
 	}
 
 	public FractionBigInteger(BigInteger numerator, BigInteger denominator) {
