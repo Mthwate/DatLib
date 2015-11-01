@@ -161,26 +161,6 @@ public class Matrix {
 		return determinant;
 	}
 
-	/*
-	public FractionBigInteger determinant() {
-		if (!isSquare()) {
-			throw new UnsupportedOperationException("Cannot get determinant of a non square matrix");
-		}
-
-		FractionBigInteger determinant = new FractionBigInteger(0);
-
-		if (rows == 2) {
-			determinant = (contents[0][0].multiply(contents[1][1])).subtract(contents[0][1].multiply(contents[1][0]));
-		} else {
-			for (int r = 0; r < rows; r++) {
-				determinant = determinant.add(contents[r][0].multiply((int) Math.pow(-1, r)).multiply(this.submatrix(r, 0).determinant()));
-			}
-		}
-
-		return determinant;
-	}
-	*/
-
 	public boolean isSquare() {
 		return rows == cols;
 	}
