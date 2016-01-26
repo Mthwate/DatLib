@@ -1,7 +1,6 @@
 package com.mthwate.datlib;
 
 
-import com.mthwate.datlib.fileprocessor.FileProcessor;
 import com.mthwate.datlib.filevisitor.FileCollectionVisitor;
 
 import java.io.File;
@@ -20,21 +19,6 @@ public class FileUtils {
 		FileCollectionVisitor<Path> visitor = new FileCollectionVisitor<>();
 		Files.walkFileTree(dir.toPath(), visitor);
 		return visitor.getFiles();
-	}
-
-	/**
-	 * @deprecated use {@link Files#walkFileTree(Path, java.nio.file.FileVisitor)} instead
-	 */
-	@Deprecated
-	public static void traverseDirectory(FileProcessor processor, File dir) {
-		if (dir.isDirectory()) {
-			processor.onDirectory(dir);
-			for (File content : dir.listFiles()) {
-				traverseDirectory(processor, content);
-			}
-		} else {
-			processor.onFile(dir);
-		}
 	}
 
 }
