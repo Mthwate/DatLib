@@ -6,7 +6,6 @@ import java.awt.image.BufferedImage;
  * @author lordxarus
  * @since 1.2
  */
-
 public class ImageUtils {
 
 	/**
@@ -32,14 +31,14 @@ public class ImageUtils {
 			for (int y = 0; y < height; y++) {
 				int rgb1 = img1.getRGB(x, y);
 				int rgb2 = img2.getRGB(x, y);
-				int a1 = ColorUtils.getAlpha(rgb1);
-				int r1 = ColorUtils.getRed(rgb1);
-				int g1 = ColorUtils.getGreen(rgb1);
-				int b1 = ColorUtils.getBlue(rgb1);
-				int a2 = ColorUtils.getAlpha(rgb2);
-				int r2 = ColorUtils.getRed(rgb2);
-				int g2 = ColorUtils.getGreen(rgb2);
-				int b2 = ColorUtils.getBlue(rgb2);
+				int a1 = ColorUtils.getArgbAlpha(rgb1);
+				int r1 = ColorUtils.getArgbRed(rgb1);
+				int g1 = ColorUtils.getArgbGreen(rgb1);
+				int b1 = ColorUtils.getArgbBlue(rgb1);
+				int a2 = ColorUtils.getArgbAlpha(rgb2);
+				int r2 = ColorUtils.getArgbRed(rgb2);
+				int g2 = ColorUtils.getArgbGreen(rgb2);
+				int b2 = ColorUtils.getArgbBlue(rgb2);
 				diff += Math.abs(a1 - a2);
 				diff += Math.abs(r1 - r2);
 				diff += Math.abs(g1 - g2);
